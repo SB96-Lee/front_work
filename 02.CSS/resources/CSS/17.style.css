@@ -1,0 +1,90 @@
+header {
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+
+}
+
+.cat-type {
+    width: 300px;
+    height: 200px;
+    margin: 5px;
+    background-size: cover;
+    background: no-repeat ;
+    border: 1px solid;
+}
+
+#cat1 {
+    background-image: url(../IMG/cat1.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+#cat2 {
+    background-image: url(../IMG/cat2.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat3 {
+    background-image: url(../IMG/cat3.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat4 {
+    background-image: url(../IMG/cat11.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat5 {
+    background-image: url(../IMG/cat5.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat6 {
+    background-image: url(../IMG/cat6.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat7 {
+    background-image: url(../IMG/cat7.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat8 {
+    background-image: url(../IMG/cat8.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat9 {
+    background-image: url(../IMG/cat9.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+#cat10 {
+    background-image: url(../IMG/cat10.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    padding-top: 130px;
+    text-shadow: 1px 3px rgb(133, 118, 118);
+}

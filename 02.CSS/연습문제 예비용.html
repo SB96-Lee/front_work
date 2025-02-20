@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+ <style>
+    input:focus{
+        background-color: rgb(181, 181, 120);
+    }
+
+    input{
+        margin: 20px;
+    }
+    
+    #bor {    
+        padding: 10px 20px 30px 20px;
+        border-style: solid;
+        border-radius: 5px 10px 2px 15px;
+    }
+
+    #btn {
+        border-radius: 5px;
+        margin: 10px 10px 0px 10px; 
+    }
+
+    div {
+        max-width: 300px;
+        max-height: 200px;
+        text-align: center;
+    }
+
+ </style>   
+</head>
+
+<body>
+
+    <form action="test.do"> 
+    ID <input type="text" class="id"> <br>
+    PW <input type="password" class="PW">
+
+    <div><p id="bor">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, enim voluptates ratione odit doloremque qui repellat. Adipisci mollitia sunt libero!</p> </div>
+
+    <button type="submit" id="btn">로그인</button> <button type="reset" id="btn2">초기화</button>
+    </form>
+</body>
+</html>

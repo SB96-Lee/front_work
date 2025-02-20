@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Jua&display=swap" rel="stylesheet">
+   
+    <title>글꼴 관련 스타일</title>
+</head>
+<body>
+    <h1>글꼴 관련 스타일 속성(font~)</h1>
+    <h3>font-family : 글꼴 지정</h3>
+    <pre>
+        선택자 {
+            font-family: 글꼴명;
+        } 
+    </pre>
+    
+    <p id="ff1">글꼴테스트1</p>
+    <p id="ff2">글꼴테스트2</p>
+    <p id="ff3">글꼴테스트3</p>
+
+    <!------------------style-------------------->
+    <style>
+        #ff1 {font-family: 궁서체, sans-serif;}
+        #ff2 {font-family: 바탕체;}
+        #ff3 {font-family:'Times New Roman', Times, serif}
+    </style>
+
+    <h3>* 외부 웹 폰트 사용</h3>    
+    <p>
+        구글 폰트 사용
+        <a href="https://fonts.google.com/" target="_blank">구글 웹 폰트</a>
+    </p>
+
+    <p id="google1">Lorem ipsum dolor sit amet.</p>
+    <p id="google2">Lorem ipsum dolor sit amet.</p>
+    <p id="google3">Lorem ipsum dolor sit amet.</p>
+    <!------------------style-------------------->
+    <style>
+        #google1{font-family: "Jua", serif;}
+        #google2{font-family: "42dot Sans", serif; font-weight: 800; }
+    </style>
+
+    <h3>* 글꼴의 크기</h3>
+    <pre>
+        선택자{font-size:크기(px|em|%) }
+    </pre>
+
+    <ul>
+        <li id="fs1">고정크기 px테스트</li>
+        <li id="fs2">가변크기 %테스트</li>
+        <li id="fs3">가변크기 em테스트</li>
+        <li id="fs4">가변크기 rem테스트</li>
+    </ul>
+
+     <!------------------style-------------------->
+     <style>
+        #fs1{font-size:30px;}
+        #fs2{font-size: 150%;} /* 디바이스마다 폰트 크기 달라짐 */
+        #fs3{font-size: 2em;} /* 부모의 글꼴 크기의 2배(기본글꼴들은 16px정도함함) */
+        #fs4{font-size: 2rem;} /* root부모의 글꼴 크기를 기준으로 결정 */
+     </style>
+
+     <hr>
+
+     <h3>font-weight : 글꼴의 두께 지정</h3>
+     <pre>
+        선택자 {
+            font-weight : normal|bolder|lighter|100|400|....
+        }
+     </pre>
+
+     <ul>
+        <li>원래 긁기</li>
+        <li id="fw1">굵은 글꼴로 변경</li>
+        <li id="fw2">원래 굵기보다 더 굵게</li>
+        <li id="fw3">원래 굵기보다 더 가늘게</li>
+     </ul>
+
+    <!------------------style--------------------> 
+    <style>
+        #fw1 {font-weight: bold;}
+        #fw2 {font-weight: lighter;}
+        /* #fw3 {font-weight: bolder;} */
+        #fw3 {font-weight: 900;}
+    </style>
+
+    <hr>
+
+    <h3>font-variant : 영문텍스트 문구를 작은 대문자로 변경할 때 사용</h3>
+    <pre>
+        선택자 {
+            font-variant : small-caps;
+        }
+    </pre>
+    <p>I LOVE YOU</p>
+    <span>i love you</span>&nbsp;
+    <span id="fv">i love you</span>
+
+     <!------------------style--------------------> 
+     <style>
+        #fv {font-variant: small-caps;}
+     </style>
+
+    <hr>
+
+    <h3>font-style : 텍스트를 기울임 글꼴로 사용</h3>
+    <pre>
+        선택자 {
+            font-style:noraml|itelic|oblique;
+        }
+    </pre>    
+
+    <p style="font-style: italic;">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p style="font-style: oblique;">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+    <hr>
+
+    <h3>font : 모든 속성을 한꺼번에 세팅</h3>
+    <pre>
+        선택자 {
+            font : [style] [variant] [weight] [size|lineheight] [family, 대체글꼴]
+        }
+    </pre>
+
+    <p id="fontAll">속성을 한꺼번에 적용</p>
+
+    <!------------------style--------------------> 
+    <style>
+        #fontAll {font: italic small-caps 700 20px 궁서체, sans-serif;}
+    </style>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* ==================================1.속성 선택지=====================================*/
+/* div 요소들 중 name 속성값이 name1과 "일치"하는 요소 선택 */
+div[name=name1] {
+    background-color: blue;
+}
+
+/* div 요소들 중 name 속성값이 name1 단어가 "포함"되어 있는 요소 선택 */
+div[name~=name1] {
+    background-color: rgb(166, 255, 0);
+     }
+
+ /* div 요소들 중 name 속성값이 na가 "포함하는 요소 선택 */
+div[name^=na] {
+    background-color: rgba(94, 144, 1, 0.397);
+    }
+
+/* div 요소들 중 name 속성값이 name1과 "포함하는 요소 선택 */
+div[name~=na] {
+    background-color: rgb(87, 206, 74);
+     }
+
+/* div 요소들 중 name 속성값이 ss "끝"나는는 요소 선택 */
+div[name~=ss] {
+    background-color: rgb(255, 132, 0);
+}
+    
+/* div 요소들 중 name 속성값이 i가 "포함"하는 요소 선택 */
+div[class*=i] {
+    color: rgba(144, 1, 1, 0.397);
+    background-color: dimgray;
+     }
+ 
+ /* class 속성값이 div-class인 요소들 중에 name 속성값에 name3이 단어로 포함되어 있는 요소 */
+.div-class[name~=name3] {
+    background-color: chocolate;
+}
+
+/* ==================================2.자손/후손 선택지=====================================*/
+/* #test1의 자손들 중에 h4요소만 선택 */
+#test1>* {
+    background-color: bisque;
+}
+
+/* #test1의 자손들 중에 h4요소만 선택 */
+#test1>h4 {
+    background-color: coral;
+}
+
+/* #test1의 자손들 중에 ul 자손들 중 li요소만 선택 */
+#test1>ul>li {
+    color: blueviolet;
+}
+
+/* #test1의 후손들 중에 li요소만 선택 */
+#test1 li {
+    background-color: beige;
+}
+/* ==================================3. 동위 선택지=====================================*/
+/* #test2의 바로 뒤에 나오는 div 하나만 선택 */
+#test2+div{
+    background-color: aqua;
+}
+
+
+#test2+ul{background-color: blue;}
+/* 선택안됨(바로 뒤 요소가 ul이 아니기 때문에) */
+
+
+/* #test2의 뒤에 형제들중 div는 모두 다 */
+#test2~div{background-color: darkcyan;}
+
+/* #test2의 뒤에 형제들중 ul는 모두 다 */
+#test2~ul{background-color: rgb(139, 0, 0);}
+
+/* ==================================4. 반응 선택지=====================================*/
+
+.area {
+    background-color: yellowgreen;
+    width : 100px;
+    height: 100px;
+    cursor: pointer;
+}
+#active-test:active{
+    background-color: blueviolet;
+    color: white;
+}
+
+#hover-test:hover {
+    background-color: red;
+    color: white;
+}
+
+#link:link { color: aquamarine;}
+#link:hover { color: green;}
+#link:active { color: blueviolet;}
+#link:visited { color: coral;}
+
+/* ==================================5. 상태 선택지=====================================*/
+input[type = checkbox]:checked {
+    width: 30px;
+    height: 30px;
+}
+
+input[type = checkbox]:checked+label {
+    font-size: 30px;
+}
+
+input[name^=user]:focus {
+    background-color: pink;
+}
+
+button:enabled {
+    color: violet;
+}
+
+button:disabled{
+    color: darkolivegreen;
+}
+
+
+/* ==================================6. 일반 구조 선택자=====================================*/
+/* #spring의 후손들 중 첫번째 */
+#spring :first-child{background-color: lightgray;}
+/* #spring>:first-child{background-color: lightgray;} */
+
+
+#spring :last-child{
+    background-color: lightgrey;
+}
+
+#spring :nth-child(2) {background-color: lightcoral;}
+#spring :nth-child(2n) {color: violet;}
+#spring :nth-child(2n+1) {color: purple;}
+
+/* ==================================7. 형제 구조 선택자=====================================*/
+#summer p:first-of-type {
+    background-color: lightgray;
+}
+
+#summer p:last-of-type {
+    background-color: lightpink;
+}
+#summer p:nth-of-type(2) {background-color: coral;}
+#summer p:nth-of-type(2n) {color: blue;}
+#summer p:nth-of-type(2n+1) {color: purple;}
+#summer p:nth-last-of-type(2n+1) {color:darkblue}
+
+/* ==================================7. 부정 선택자=====================================*/
+#fall :not(p:first-of-type) {color: red;}

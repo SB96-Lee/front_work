@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <title>nav 애니메이션</title>
+    <style>
+        li {
+            list-style: none;
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+            background-color: khaki;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            border: 1px solid darkkhaki;
+        }
+    </style>
+
+    <script>
+        $(() => {
+            $('li>a').hover(function () {
+                let overColor = $(this).attr('data-bg');
+                console.log(overColor);
+
+                $(this).stop()
+                    .animate({
+                        'background-color': overColor,
+                         'color': 'white'
+                    }, 1000)
+            }, function () {
+                $(this).stop()
+                    .animate({
+                        'background-color': '#F0E68C',
+                         'color': 'black'
+                    }, 1000)
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/05.jQuery/01.jQuery개요.html" data-bg="#000093">Home</a></li>
+        <li><a href="/05.jQuery/01.jQuery개요.html" data-bg="#2900C9">About</a></li>
+        <li><a href="/05.jQuery/01.jQuery개요.html" data-bg="#007EA5">Portfolio</a></li>
+        <li><a href="/05.jQuery/01.jQuery개요.html" data-bg="#5F00FF">Contact</a></li>
+    </ul>
+</body>
+
+</html>

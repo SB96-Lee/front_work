@@ -68,7 +68,7 @@
             const {type : type2, color : color2, year : year2} = car;
             console.log(type2, color2, year2);
 
-            //익명함수 활용용
+            //익명함수 활용
             const fun1 = function(n) {
                 const {type,color} = n;
                 console.log(type);
@@ -76,7 +76,8 @@
             };
             fun1(car);
 
-            const fun2 = function({type,year}) {
+            //화살표 함수 + 익명함수
+            const fun2 = ({type,year}) => {
                 console.log(type);
                 console.log(year);
             };

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.2.정규표현식 문제</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            border: 1px solid;
+            width: 600px;
+            margin: auto;
+            height: 620px;
+            position: relative;
+        }
+
+
+        table {
+            table-layout: fixed;
+            border-collapse: collapse;
+
+        }
+
+
+        td {
+            margin-left: 50px;
+            font-size: 14px;
+            padding: 10px;
+            display: inline-block;
+
+
+        }
+
+        input, select {
+            position: absolute;
+            left: 200px;
+            /* div 왼쪽 기준으로 220px를 떨어트린 고정된 위치 */
+
+        }
+
+
+        .btn1 {
+            padding: 8px 25px;
+            margin: 0px 10px 50px 190px;
+
+        }
+
+        .btn2 {
+            padding: 8px 25px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>회원가입</h1>
+    <form action="test.do">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <lable for="userId">*아이디 : </lable>
+                    </td>
+                    <td><input name="userId" id="userId"  ></td>
+                </tr>
+                <tr>
+                    <td colspan="2">첫 글자는 반드시 영문자하고 영문자, 숫자 포함 총 4-12자로 입력하시오.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="userPw">*비밀번호 : </lable>
+                    </td>
+                    <td><input type="password" name="userPw" id="userPw" required ></td>
+                </tr>
+                <tr>
+                    <td colspan="2">영문자, 숫자, 특수문자로 총 8-15자로 입력하시오.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="checkPw">*비밀번호 확인 : </lable>
+                    </td>
+                    <td><input type="password" name="checkPw" id="checkPw" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">위의 비밀번호와 일치하게 입력하시오</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="userName">*이름 : </lable>
+                    </td>
+                    <td><input name="userName" id="userName" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">한글로만 이루어져 있어야 되며 2글자 이상으로 입력하시오.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="userEM">*이메일 : </lable>
+                    </td>
+                    <td><input type="email" name="userEm" id="userEm" required><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2">이메일 형식에 맞춰서 입력하시오.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="hobby">*취미 : </lable>
+                    </td>
+                    <td><input name="hobby" id="hobby" required><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="hometown">*거주지 : </lable>
+                    </td>
+                    <td>
+                        <select name="hometown" id="hometown" required >
+                            <option value='sel' selected>서울</option>
+                            <option value='gyeonggi'>경기도</option>
+                            <option value='gyeongsang'>경상도</option>
+                            <option value='jeonra'>전라도</option>
+                            <option value='chungcheong'>충정도</option>
+                            <option value='kangwon'>강원도</option>
+                            <option value='etc'>이외</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <hr style="width:80%; margin: 20px auto;">
+            <button type="submit" class="btn1" onclick="return register();">회원가입</button>
+            <button type="reset" class="btn2">취소</button>
+        </div>
+    </form>
+
+    <script>
+        function register() {
+            const userId = document.getElementById('userId').value;
+            const userPw = document.getElementById('userPw').value;
+            const checkPw = document.getElementById('checkPw').value;
+            const userName = document.getElementById('userName').value;
+            const userEM = document.getElementById('userEm').value;
+
+
+            let regExp = /^[a-z][a-z0-9]{3,12}$/i;
+
+            if (!regExp.test(userId)) {
+                alert('아이디 양식에 맞지 않는 입력 값입니다.');
+                userId.value='';
+                userId.focus();
+                return false;
+            }
+
+            // 영문자, 숫자, 특수문자로 총 8-15자로 입력하시오.
+            regExp = /^[a-z0-9!@#$%^&*()_+={}[\]:;"'<>,.?/-]{8,15}$/i;
+
+            if (!regExp.test(userPw)) {
+                alert('비밀번호 양식에 맞지 않는 입력 값입니다.');
+                userPw.value = '';
+                userPw.focus();
+                return false;
+            }
+
+            if (checkPw != userPw) {
+                alert('위의 비밀번호와 일치하지 않습니다.');
+                checkPw.value = '';
+                checkPw.focus();
+                return false;
+            }
+
+            //한글로만 이루어져 있어야 되며 2글자 이상으로 입력하시오.
+            regExp = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,}$/;
+
+            if (!regExp.test(userName)) {
+                alert('이름 양식에 맞지 않는 입력 값입니다.');
+                userName.value ='';
+                userName.focus();
+                return false;
+            }
+            
+        }
+
+    </script>
+
+</body>
+
+</html>

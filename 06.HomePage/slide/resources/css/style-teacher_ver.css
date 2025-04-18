@@ -18,7 +18,7 @@ header>nav{float: right; margin-top: 25px; padding: 10px;}
 .submenu>li:hover {background-color: rgba(4, 4, 81, 0.3); color: white;}
 
 /* 본문 이미지 */
-#imgslide {clear: both; width:1000px; height: 362px; position: relative; margin: 10px 0; /*overflow: hidden;*/ }
+#imgslide {clear: both; width:1000px; height: 362px; position: relative; margin: 10px 0; overflow: hidden;}
 #imgslide>div {position: absolute; display: flex;}
 
 /* 본문 내용 */
